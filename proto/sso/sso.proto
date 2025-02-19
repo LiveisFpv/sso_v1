@@ -1,0 +1,45 @@
+//Объявляем версию ProtoBuf
+syntax = "proto3";
+
+//Текущей пакет - указывает пространство имен для сервиса и сообщений.
+package auth;
+
+//Settings for generation
+option go_package = "tuzov.sso.v1;sso_v1";
+
+//Auth is service for managing permissions and roles
+service Auth{
+    //Register new user
+    rpc Register (RegisterRequest) returns (RegisterResponse);
+    // Login user and return auth token
+    rpc Login (LoginRequest) returns (LoginResponse);
+}
+
+message RegisterRequest {
+    string email = 1; // Email of the user to register.
+    string password = 2; // Password of the user to register.
+}
+
+message RegisterResponse {
+    int64 user_id = 1; // User ID of the registered user.
+}
+
+message LoginRequest {
+    string email = 1; // Email of the user to login.
+    string password = 2; // Password of the user to login.
+    int32 app_id = 3; // ID of the app to login to.
+}
+
+message LoginResponse {
+    string token = 1; // Auth token of the logged in user.
+}
+
+/*
+For generation
+protoc -I proto proto/sso/sso.proto --go_out=./gen/go/ --go_opt=paths=source_relative --go-grpc_out=./gen/go/ --go-grpc_opt=paths=source_relative
+-I proto way to proto file
+--go_out - where is create go-code
+--go_opt - how to create package name
+--go-grpc_out - where to create go grpc-code
+--go-grpc_opt - how to create grpc package name
+*/
