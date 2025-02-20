@@ -1,4 +1,4 @@
-module github.com/LiveisFPV/sso_v1/gen/go/sso
+module github.com/LiveisFPV/sso_v1
 
 go 1.24.0
 
