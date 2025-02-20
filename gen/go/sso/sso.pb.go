@@ -8,7 +8,7 @@
 
 //Текущей пакет - указывает пространство имен для сервиса и сообщений.
 
-package sso_v1
+package sso
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
