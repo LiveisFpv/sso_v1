@@ -131,10 +131,10 @@ func (x *RegisterResponse) GetUserId() int64 {
 
 type LoginRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`               // Email of the user to login.
-	Password      *string                `protobuf:"bytes,2,opt,name=password,proto3,oneof" json:"password,omitempty"`   // Password of the user to login.
-	AppId         int32                  `protobuf:"varint,3,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"` // ID of the app to login to.
-	YandexToken   *string                `protobuf:"bytes,4,opt,name=yandex_token,json=yandexToken,proto3,oneof" json:"yandex_token,omitempty"`
+	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`                                      // Email of the user to login.
+	Password      *string                `protobuf:"bytes,2,opt,name=password,proto3,oneof" json:"password,omitempty"`                          // Password of the user to login.
+	AppId         int32                  `protobuf:"varint,3,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`                        // ID of the app to login to.
+	YandexToken   *string                `protobuf:"bytes,4,opt,name=yandex_token,json=yandexToken,proto3,oneof" json:"yandex_token,omitempty"` // Yandex token for register user
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
