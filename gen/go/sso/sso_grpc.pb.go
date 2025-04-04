@@ -8,7 +8,7 @@
 
 //Текущей пакет - указывает пространство имен для сервиса и сообщений.
 
-package sso
+package sso_v1
 
 import (
 	context "context"
