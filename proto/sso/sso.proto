@@ -18,7 +18,7 @@ service Auth{
 message RegisterRequest {
     string email = 1; // Email of the user to register.
     optional string password = 2; // Password of the user to register.
-    optional string yandex_token = 3;
+    optional string yandex_token = 3; // Yandex token for login user
 }
 
 message RegisterResponse {
